@@ -11,16 +11,16 @@ on url: `localhost:5000/user/{name}`
   - array of languages used in given repository (name of the language: bytes of code in that language)
 
 # USER JSON FORMAT:
-`{
+{
   login: GithuLogin,
   name: GithubName,
   bio: GithubBio,
   languages: {
     LanguageName: numberOfBytes,
   }
-}`
+}
 # REPOSITORIES JSON FORMAT
-`[{
+[{
   name: RepositoryName,
   languages: {
     LanguageName: numberOfBytes,
@@ -32,4 +32,4 @@ on url: `localhost:5000/user/{name}`
     LanguageName: numberOfBytes,
   },
  },
- ]`
+ ]
