@@ -1,0 +1,18 @@
+$color_1: #fff5c1;
+$color_2: #faa628;
+$color_3: #eb9a69;
+$color_4: #8d5555;
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
+.content {
+  background-color: darken($color_3, 15%);
+  border-radius: 5px;
+  padding: 0.5em;
+  width: 12em;
+  word-wrap: break-word;
+}

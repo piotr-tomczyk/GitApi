@@ -1,0 +1,56 @@
+<form [formGroup]="searchBar" (ngSubmit)="onSubmit()" ngClass="searchBar">
+  <div ngClass="column">
+    <div ngClass="flex1">
+      <div>
+        <label for="username">Username: </label>
+        <input
+          type="text"
+          formControlName="userName"
+          (input)="requiredError = false"
+        />
+      </div>
+      <div ngClass="flex2">
+        <label for="responseType">Find:</label>
+        <div>
+          <input
+            type="radio"
+            value="user"
+            formControlName="responseTypeControl"
+            (change)="changeOption(1)"
+          />
+          <label for="user">User</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            value="repos"
+            formControlName="responseTypeControl"
+            (change)="changeOption(0)"
+          />
+          <label for="repos">Repositories</label>
+        </div>
+        <button type="submit">Search</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="requiredError" ngClass="error">
+    Username cannot be empty and radio button must be selected.
+  </div>
+
+  <div *ngIf="requiredError" ngClass="error">Movie title cannot be empty.</div>
+  <div ngClass="error" *ngIf="this.requestError && !requiredError">
+    Error getting the user
+  </div>
+  <div ngClass="error" *ngIf="this.waiting">waiting...</div>
+</form>
+<app-user-view
+  [user]="this.user"
+  *ngIf="this.responseRequested && this.isUser"
+  ngClass="movie"
+></app-user-view>
+<app-repository-view
+  [repositories]="this.repositories"
+  *ngIf="this.responseRequested && this.isRepository"
+  ngClass="movie"
+></app-repository-view>

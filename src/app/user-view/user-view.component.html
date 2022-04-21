@@ -1,0 +1,17 @@
+<div ngClass="flex">
+  <div ngClass="column">
+    <h3>LOGIN</h3>
+    <div ngClass="content">{{ this.user?.login }}</div>
+    <h3>NAME</h3>
+    <div ngClass="content">{{ this.user?.name }}</div>
+    <h3>BIO</h3>
+    <div ngClass="content">{{ this.user?.bio }}</div>
+    <h3>LANGUAGES</h3>
+    <div *ngFor="let language of this.user?.languages">
+      <h4>NAME</h4>
+      <div ngClass="content">{{ language.name }}</div>
+      <h4>BYTES IN REPOS</h4>
+      <div ngClass="content">{{ language.bytes }}</div>
+    </div>
+  </div>
+</div>

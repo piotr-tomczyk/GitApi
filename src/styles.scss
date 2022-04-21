@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+}
+$color_1: #fff5c1;
+$color_2: #faa628;
+$color_3: #eb9a69;
+$color_4: #8d5555;
+body {
+  background-color: $color_1;
+}

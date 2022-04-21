@@ -1,0 +1,14 @@
+<div ngClass="flex">
+  <div ngClass="column">
+    <div *ngFor="let repository of this.repositories">
+      <h3>NAME</h3>
+      <div ngClass="content">{{ repository.name }}</div>
+      <div *ngFor="let language of repository.languages">
+        <h5>LANGUAGE NAME</h5>
+        <div ngClass="content">{{ language.name }}</div>
+        <h5>BYTES IN REPOS</h5>
+        <div ngClass="content">{{ language.bytes }}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+$color_1: #fff5c1;
+$color_2: #faa628;
+$color_3: #eb9a69;
+$color_4: #8d5555;
+
+button {
+  border-style: none;
+  background-color: $color_4;
+  color: $color_1;
+  padding: 0.5em;
+  border-radius: 8px;
+}
+input {
+  border-style: none;
+  padding: 0.5em;
+  background-color: lighten($color_2, 5%);
+  border-radius: 8px;
+}
+input:focus {
+  outline: none;
+}
+.flex {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error {
+  color: red;
+}
+.movie {
+  display: flex;
+  flex-direction: column;
+  max-width: 30vh;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2em;
+  background-color: lighten($color_2, 4%);
+  padding: 1em;
+  border-radius: 5px;
+  min-height: 60vh;
+  max-height: auto;
+}
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-top: 2em;
+}
+.flex1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.flex2 {
+  display: flex;
+  gap: 1em;
+}
