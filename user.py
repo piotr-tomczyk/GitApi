@@ -1,5 +1,6 @@
 import requests
 import json
+from yourToken import *
 
 class Language:
     def __init__(self, name, bytes):
@@ -60,8 +61,8 @@ class User:
 class Fetcher:
     def fetch(self, username):
         username = username
-
-        header = {'Authorization': 'token %s' % "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"}
+        token = Token()
+        header = {'Authorization': 'token %s' % token.yourToken}
         u_url = f"https://api.github.com/users/{username}"
 
         user_data = requests.get(u_url, headers=header).json()
