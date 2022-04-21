@@ -1,4 +1,10 @@
 # GitApi
+In order to launch the server you need to create a 'yourToken.py' file first with code:
+```
+ class Token:
+    def __init__(self):
+        self.yourToken = "yourGitHubAuthToken"
+```
 This python server when launched provides two types of data from GitHubAPI:
 1. On url: `localhost:5000/repositories/{name}`. Information about GitHub user such as:
   - Login
