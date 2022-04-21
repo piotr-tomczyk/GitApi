@@ -13,20 +13,13 @@ on url: `localhost:5000/user/{name}`
 # USER JSON FORMAT:
 ```
 {
-
   "login": GithuLogin,
-  
   "name": GithubName,
-  
   "bio": GithubBio,
- 
   "languages": 
   {
-  
     "LanguageName": numberOfBytes,
-    
   }
-  
 }
 ```
 # REPOSITORIES JSON FORMAT
