@@ -3,12 +3,23 @@ $color_2: #faa628;
 $color_3: #eb9a69;
 $color_4: #8d5555;
 
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+%flex-center {
+  justify-content: center;
+  align-items: center;
+}
 button {
   border-style: none;
   background-color: $color_4;
   color: $color_1;
   padding: 0.5em;
   border-radius: 8px;
+}
+button:hover {
+  background-color: darken($color_4, 5%);
 }
 input {
   border-style: none;
@@ -22,26 +33,21 @@ input:focus {
 .flex {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  align-items: center;
+  @extend %flex-center;
 }
 .column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-column;
+  @extend %flex-center;
 }
 .error {
   color: red;
 }
 .movie {
-  display: flex;
-  flex-direction: column;
+  @extend %flex-column;
   max-width: 30vh;
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-center;
   flex-wrap: wrap;
   margin-top: 2em;
   background-color: lighten($color_2, 4%);
@@ -51,26 +57,21 @@ input:focus {
   max-height: auto;
 }
 .searchBar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-column;
+  @extend %flex-center;
   gap: 1em;
 }
 .column {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-center;
   gap: 1em;
   margin-top: 2em;
 }
-.flex1 {
-  display: flex;
-  flex-direction: column;
+.flex-form {
+  @extend %flex-column;
   gap: 1em;
 }
-.flex2 {
+.flex-radio {
   display: flex;
   gap: 1em;
 }

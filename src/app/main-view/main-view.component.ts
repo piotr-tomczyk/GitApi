@@ -6,7 +6,7 @@ import {
   FormGroup,
 } from '@angular/forms';
 
-import { Language, Repository, User, FetchService } from '../fetch.service';
+import { Repository, User, FetchService } from '../fetch.service';
 @Component({
   selector: 'app-main-view',
   templateUrl: './main-view.component.html',
@@ -67,15 +67,7 @@ export class MainViewComponent implements OnInit {
       }
       this.requestError = false;
       this.responseRequested = true;
-      let languages: Language[] = [];
-      let keys: string[] = Object.keys(user_response.languages);
-      let values: number[] = Object.values(user_response.languages);
-      for (let i = 0; i < keys.length; i++) {
-        languages.push({
-          name: keys[i],
-          bytes: values[i],
-        });
-      }
+      let languages = this.Fetch.languageToArray(user_response.languages);
       this.user = {
         login: user_response.login,
         name: user_response.name,
@@ -83,15 +75,7 @@ export class MainViewComponent implements OnInit {
         languages: languages,
       };
       repository_response.repositories.forEach((repository: any) => {
-        let languages: Language[] = [];
-        let keys: string[] = Object.keys(repository.languages);
-        let values: number[] = Object.values(repository.languages);
-        for (let i = 0; i < keys.length; i++) {
-          languages.push({
-            name: keys[i],
-            bytes: values[i],
-          });
-        }
+        let languages = this.Fetch.languageToArray(repository.languages);
         repository.languages = languages;
       });
       this.repositories = repository_response.repositories;

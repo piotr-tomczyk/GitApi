@@ -6,7 +6,9 @@ export interface Language {
   name: string;
   bytes: number;
 }
-
+interface LanguageDict {
+  [k: `${string}`]: number;
+}
 export interface Repository {
   name: string;
   languages: Language[];
@@ -37,5 +39,17 @@ export class FetchService {
     );
     console.log(response);
     return response;
+  }
+  languageToArray(languages: LanguageDict) {
+    let languageArray: Language[] = [];
+    let keys: string[] = Object.keys(languages);
+    let values: number[] = Object.values(languages);
+    for (let i = 0; i < keys.length; i++) {
+      languageArray.push({
+        name: keys[i],
+        bytes: values[i],
+      });
+    }
+    return languageArray;
   }
 }

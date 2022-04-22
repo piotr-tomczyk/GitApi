@@ -1,6 +1,6 @@
 <form [formGroup]="searchBar" (ngSubmit)="onSubmit()" ngClass="searchBar">
   <div ngClass="column">
-    <div ngClass="flex1">
+    <div ngClass="flex-form">
       <div>
         <label for="username">Username: </label>
         <input
@@ -9,7 +9,7 @@
           (input)="requiredError = false"
         />
       </div>
-      <div ngClass="flex2">
+      <div ngClass="flex-radio">
         <label for="responseType">Find:</label>
         <div>
           <input
